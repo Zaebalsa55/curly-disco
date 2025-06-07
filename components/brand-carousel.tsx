@@ -1,20 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
-
 const brands = [
-  { name: "Bosch", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Whirlpool", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Indesit", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "LG", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Electrolux", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Zanussi", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Samsung", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Candy", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Ariston", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Beko", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Gorenje", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
-  { name: "Ardo", logo: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=100&h=50" },
+  "Bosch", "Whirlpool", "Indesit", "LG", "Electrolux", "Zanussi", 
+  "Samsung", "Candy", "Ariston", "Beko", "Gorenje", "Ardo"
 ]
 
 export function BrandCarousel() {
@@ -31,26 +19,16 @@ export function BrandCarousel() {
 
       <div className="relative">
         <div className="flex overflow-hidden">
-          <motion.div
-            className="flex gap-6 min-w-max"
-            animate={{
-              x: [0, -1600],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "linear",
-            }}
-          >
+          <div className="flex gap-6 min-w-max animate-scroll">
             {[...brands, ...brands].map((brand, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-4 border border-gray-200 flex items-center justify-center min-w-[160px] h-20 group hover:border-transparent hover:bg-gradient-to-br hover:from-teal-50 hover:to-cyan-50 hover:shadow-[0_0_0_2px] hover:shadow-teal-200/50"
+                className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-4 border border-gray-200 flex items-center justify-center min-w-[160px] h-20 group hover:border-transparent hover:bg-gradient-to-br hover:from-teal-50 hover:to-cyan-50"
               >
-                <span className="text-lg font-semibold text-gray-700">{brand.name}</span>
+                <span className="text-lg font-semibold text-gray-700">{brand}</span>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Gradient overlays */}
